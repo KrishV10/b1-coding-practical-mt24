@@ -77,7 +77,7 @@ class Mission:
     @classmethod
     def from_csv(cls, file_name: str):
         mission_data = pd.read_csv(file_name) # Reads csv file and uses pandas to convert to a table
-        reference = mission_data["references"].to_numpy() 
+        reference = mission_data["reference"].to_numpy() 
         cave_height = mission_data["cave_height"].to_numpy()
         cave_depth = mission_data["cave_depth"].to_numpy() # Takes each column and converts from series to numpy array
         return cls(reference, cave_height, cave_depth) # Returns the three columns
